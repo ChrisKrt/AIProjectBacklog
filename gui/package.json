@@ -1,0 +1,36 @@
+{
+  "name": "@aiproject/gui",
+  "version": "0.1.0",
+  "description": "OneBookshelf PWA - Main GUI application",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint src --ext .ts,.svelte"
+  },
+  "dependencies": {
+    "@aiproject/shared": "workspace:*",
+    "svelte": "^4.2.8",
+    "@nanostores/persistent": "^0.10.1",
+    "nanostores": "^0.10.3",
+    "@open-policy-agent/opa-wasm": "^1.8.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@tsconfig/svelte": "^5.0.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-pwa": "^0.17.4",
+    "@originjs/vite-plugin-federation": "^1.3.5",
+    "vitest": "^1.2.1",
+    "@playwright/test": "^1.41.0",
+    "@types/node": "^20.11.5",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint-plugin-svelte": "^2.35.1"
+  }
+}
