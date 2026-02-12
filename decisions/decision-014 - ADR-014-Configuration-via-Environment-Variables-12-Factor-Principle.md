@@ -2,7 +2,7 @@
 id: decision-014
 title: 'ADR-014: Configuration via Environment Variables (12-Factor Principle)'
 date: '2026-02-09 18:31'
-status: accpeted
+status: accepted
 ---
 
 ## Context

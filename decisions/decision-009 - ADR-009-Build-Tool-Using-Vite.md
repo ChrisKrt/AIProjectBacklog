@@ -9,7 +9,7 @@ status: accepted
 The GUI is a Progressive Web App (PWA) built with:
 
 - TypeScript
-- React
+- Svelte for the shell and domain components
 - Client-side rendering (CSR)
 - Lazy loading and code splitting
 - CSS modules

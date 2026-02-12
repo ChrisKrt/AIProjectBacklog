@@ -11,7 +11,7 @@ The GUI must remain maintainable, performant, and aligned with modern web standa
 
 The GUI will use client-side rendering (CSR) with modern web tooling:
 
-- React for the shell and domain components
+- Svelte for the shell and domain components
 - Vite for build and bundling
 - TypeScript
 - CSS Modules
