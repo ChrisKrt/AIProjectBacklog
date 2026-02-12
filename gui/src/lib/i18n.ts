@@ -1,5 +1,5 @@
 // i18n library for internationalization
-import { writable, derived } from 'svelte/store';
+import { writable, derived, get } from 'svelte/store';
 import { config } from '@/shared/config/env.config';
 
 interface Translations {
@@ -61,7 +61,5 @@ export function setLocale(locale: string) {
 }
 
 export function getLocale(): string {
-  let locale: string;
-  currentLocale.subscribe((value) => (locale = value))();
-  return locale!;
+  return get(currentLocale);
 }
