@@ -2,11 +2,14 @@ import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 import federation from '@originjs/vite-plugin-federation';
+import preprocess from 'svelte-preprocess';
 import path from 'path';
 
 export default defineConfig({
   plugins: [
-    svelte(),
+    svelte({
+      preprocess: preprocess(),
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
