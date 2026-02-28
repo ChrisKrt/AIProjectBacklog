@@ -35,22 +35,21 @@ Setup the project infrastructure according to all ADRs. Establish monorepo struc
 ## Implementation Plan
 
 <!-- SECTION:PLAN:BEGIN -->
-1. Initialize git submodules
-2. Install pnpm and create workspace config
-3. Create monorepo directory structure (shared, gui, plugins, docker, scripts)
-4. Add TypeScript and Vite configs
-5. Install dependencies (Svelte, WebAwesome, Nanostores, OPA, etc.)
-6. Setup environment config templates (.env, config.js.template)
-7. Add PWA manifest and icons
-8. Add i18n structure (en.json, de.json)
-9. Scaffold Ports & Adapters domain interfaces
-10. Setup code quality tooling (ESLint, Prettier, EditorConfig)
-11. Add test infrastructure (Vitest, Playwright)
-12. Setup Docker containerization
-13. Add build automation scripts
-14. Create GitHub Actions CI/CD workflows
-15. Create minimal Svelte shell app
-16. Verify setup with dev/build/test commands
+1. Install pnpm and create workspace config
+2. Create monorepo directory structure (shared, gui, plugins, docker, scripts)
+3. Add TypeScript and Vite configs
+4. Install dependencies (Svelte, WebAwesome, Nanostores, OPA, etc.)
+5. Setup environment config templates (.env, config.js.template)
+6. Add PWA manifest and icons
+7. Add i18n structure (en.json, de.json)
+8. Scaffold Ports & Adapters domain interfaces
+9.  Setup code quality tooling (ESLint, Prettier, EditorConfig)
+10. Add test infrastructure (Vitest, Playwright)
+11. Setup Docker containerization
+12. Add build automation scripts
+13. Create GitHub Actions CI/CD workflows
+14. Create minimal Svelte shell app
+15. Verify setup with dev/build/test commands
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
@@ -61,27 +60,12 @@ Setup the project infrastructure according to all ADRs. Establish monorepo struc
 ```
 AIProject/
 ├── README.md
-├── package.json (root workspace)
-├── pnpm-workspace.yaml
-├── tsconfig.json (base config)
-├── vite.config.ts (root config)
-├── .editorconfig
-├── .gitmodules
-├── .github/
-│   ├── workflows/ (ci.yml, build.yml, test.yml)
-│   ├── instructions/
-│   ├── skills/
-│   └── copilot-instructions.md
-│
-├── shared/                          # Workspace: shared libraries
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── src/
-│       ├── types/ (domain.types.ts, plugin.contract.ts)
-│       ├── ports/ (authentication.port.ts, storage.port.ts, policy-engine.port.ts)
-│       ├── adapters/ (oidc-client.adapter.ts, storage.adapter.ts, rego-policy.adapter.ts)
-│       ├── use-cases/
-│       └── utils/
+├── Application/
+│   ├── UserInterface/
+│   ├── ApplicationLogic/
+│   └── Infrastructure/
+├── backlog/
+
 ```
 
 ## GUI Package Structure
