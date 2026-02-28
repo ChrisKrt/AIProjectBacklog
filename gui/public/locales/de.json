@@ -1,0 +1,41 @@
+{
+  "app": {
+    "name": "OneBookshelf",
+    "description": "Dokumentenorganisations-PWA"
+  },
+  "nav": {
+    "home": "Startseite",
+    "files": "Dateien",
+    "bookshelves": "Bücherregale",
+    "settings": "Einstellungen"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "loginError": "Anmeldung fehlgeschlagen",
+    "unauthorized": "Nicht autorisierter Zugriff"
+  },
+  "files": {
+    "upload": "Hochladen",
+    "download": "Herunterladen",
+    "delete": "Löschen",
+    "search": "Dateien suchen",
+    "noFiles": "Keine Dateien gefunden",
+    "fileName": "Dateiname",
+    "fileSize": "Dateigröße",
+    "uploadDate": "Upload-Datum"
+  },
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Operation erfolgreich"
+  }
+}
