@@ -1,10 +1,11 @@
 ---
 id: PBI-002
 title: Project Setup
-status: Refinement
-assignee: []
+status: In Progress
+assignee:
+  - '@coder'
 created_date: '2026-02-11 20:43'
-updated_date: '2026-02-12 19:59'
+updated_date: '2026-02-28 16:42'
 labels: []
 dependencies: []
 references:
@@ -35,21 +36,18 @@ Setup the project infrastructure according to all ADRs. Establish monorepo struc
 ## Implementation Plan
 
 <!-- SECTION:PLAN:BEGIN -->
-1. Install pnpm and create workspace config
-2. Create monorepo directory structure (shared, gui, plugins, docker, scripts)
-3. Add TypeScript and Vite configs
-4. Install dependencies (Svelte, WebAwesome, Nanostores, OPA, etc.)
-5. Setup environment config templates (.env, config.js.template)
-6. Add PWA manifest and icons
-7. Add i18n structure (en.json, de.json)
-8. Scaffold Ports & Adapters domain interfaces
-9.  Setup code quality tooling (ESLint, Prettier, EditorConfig)
-10. Add test infrastructure (Vitest, Playwright)
-11. Setup Docker containerization
-12. Add build automation scripts
-13. Create GitHub Actions CI/CD workflows
-14. Create minimal Svelte shell app
-15. Verify setup with dev/build/test commands
+Phase 1 — Monorepo Foundation (AC #1,#2): 1. pnpm-workspace.yaml + root package.json + .npmrc. 2. Directory structure: ApplicationLogic/src/domains, Infrastructure/src, UserInterface/src, packages/shared/src, plugins/, docker/, scripts/, .github/workflows/. 3. package.json per workspace package (gui, shared).
+Phase 2 — TypeScript & Vite Config (AC #3): 4. tsconfig.base.json (strict). 5. Per-package tsconfigs. 6. vite.config.ts with @sveltejs/vite-plugin-svelte, vite-plugin-federation, vite-plugin-pwa, CSS modules, env handling. 7. index.html entry.
+Phase 3 — Dependencies (AC #4): 8. GUI: svelte, @webawesome/webawesome, nanostores, @open-policy-agent/opa-wasm, @originjs/vite-plugin-federation, vite-plugin-pwa. 9. Dev: vite, typescript, vitest, @playwright/test, eslint, prettier.
+Phase 4 — Code Quality: 10. .editorconfig, eslint.config.js, .prettierrc.
+Phase 5 — Test Infrastructure (AC #10 prereq): 11. vitest.config.ts + playwright.config.ts. 12. TDD Red: first failing domain port test. 13. TDD Green: stub implementation.
+Phase 6 — PWA (AC #5): 14. public/manifest.webmanifest. 15. vite-plugin-pwa generateSW strategy. 16. SW registration in main.ts.
+Phase 7 — i18n (AC #6): 17. src/i18n/en.json + de.json. 18. src/i18n/index.ts (Nanostores store, localStorage).
+Phase 8 — Ports & Adapters Scaffolding (AC #7): 19. domains/auth/ports, domains/files/ports, domains/policies/ports + use-cases + access.rego. 20. Infrastructure/src/adapters/ placeholders. 21. packages/shared/src/plugin-contract.ts (Module Federation interface).
+Phase 9 — Environment Config (ADR-014): 22. docker/config.js.template (window.ENV). 23. .env.example. 24. scripts/generate-config.sh.
+Phase 10 — Docker & CI/CD (AC #8): 25. Dockerfile (multi-stage build→nginx). 26. docker-compose.yml. 27. nginx.conf (SPA routing). 28. .github/workflows/ci.yml (pnpm + submodules + lint + build + test). 29. .github/workflows/docker-build.yml.
+Phase 11 — Minimal Svelte Shell (AC #9,#10): 30. src/main.ts (mounts App, registers SW). 31. src/App.svelte (shell + i18n + theme). 32. src/app.css (WebAwesome + CSS tokens). 33. Verify pnpm dev, build, test.
+Phase 12 — Documentation (DoD #5-7): 34. Update Architecture doc, User Guide, Admin Guide.
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
