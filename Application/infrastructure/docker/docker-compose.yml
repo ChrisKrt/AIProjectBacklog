@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  gui:
+    build:
+      context: ../../..
+      dockerfile: Application/infrastructure/docker/Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - VITE_APP_NAME=AI Project
+      - VITE_APP_VERSION=0.1.0
+      - VITE_FEATURE_PLUGINS_ENABLED=false
+      - VITE_FEATURE_AUTH_ENABLED=false
+    restart: unless-stopped

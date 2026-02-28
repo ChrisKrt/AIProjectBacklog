@@ -1,0 +1,37 @@
+{
+  "app": {
+    "name": "KI Projekt",
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "settings": "Einstellungen"
+  },
+  "pages": {
+    "home": {
+      "title": "Willkommen beim KI Projekt",
+      "description": "Ihre intelligente Projektverwaltungsanwendung"
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "KI Projekt - Version 0.1.0"
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "language": "Sprache",
+      "theme": "Design"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht.",
+      "backHome": "Zurück zur Startseite"
+    }
+  },
+  "auth": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "loginError": "Anmeldung fehlgeschlagen"
+  }
+}

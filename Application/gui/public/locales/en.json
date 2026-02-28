@@ -1,0 +1,37 @@
+{
+  "app": {
+    "name": "AI Project",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "settings": "Settings"
+  },
+  "pages": {
+    "home": {
+      "title": "Welcome to AI Project",
+      "description": "Your intelligent project management application"
+    },
+    "about": {
+      "title": "About",
+      "description": "AI Project - Version 0.1.0"
+    },
+    "settings": {
+      "title": "Settings",
+      "language": "Language",
+      "theme": "Theme"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "The page you are looking for does not exist.",
+      "backHome": "Back to Home"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "loginError": "Login failed"
+  }
+}
