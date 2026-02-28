@@ -9,8 +9,8 @@ const translations: Record<Locale, Record<string, unknown>> = {
   de: {},
 };
 
-export const locale = persistentAtom<Locale>('locale', 
-  (navigator.language.startsWith('de') ? 'de' : DEFAULT_LOCALE)
+export const locale = persistentAtom<Locale>('locale',
+  (typeof navigator !== 'undefined' && navigator.language.startsWith('de') ? 'de' : DEFAULT_LOCALE)
 );
 
 export const locales: Locale[] = [...SUPPORTED_LOCALES];
