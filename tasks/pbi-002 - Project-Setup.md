@@ -61,90 +61,86 @@ Setup the project infrastructure according to all ADRs. Establish monorepo struc
 AIProject/
 ├── README.md
 ├── Application/
-│   ├── UserInterface/
-│   ├── ApplicationLogic/
-│   └── Infrastructure/
+│   ├── gui/
+│   ├── application/
+│   └── infrastructure/
 ├── backlog/
 
 ```
 
 ## GUI Package Structure
-
+(not necssary for this ticket)
 ```
-├── gui/                             # Workspace: main Svelte app (Host/Shell)
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── vite.config.ts
-│   ├── vitest.config.ts
-│   ├── playwright.config.ts
-│   ├── .env.example
-│   │
-│   ├── public/
-│   │   ├── manifest.webmanifest     # PWA manifest
-│   │   ├── service-worker.js        # PWA service worker
-│   │   ├── icons/ (icon-192x192.png, icon-512x512.png, favicon.ico)
-│   │   └── locales/ (en.json, de.json)
-│   │
-│   ├── src/
-│   │   ├── main.ts
-│   │   ├── App.svelte
-│   │   ├── app.css
-│   │   │
-│   │   ├── domains/                 # Domain-driven (Ports & Adapters)
-│   │   │   ├── auth/
-│   │   │   │   ├── ports/ (authentication.port.ts, identity-provider.port.ts)
-│   │   │   │   ├── adapters/ (oidc-client.adapter.ts, http-auth-controller.adapter.ts)
-│   │   │   │   ├── use-cases/ (login, logout, refresh-token)
-│   │   │   │   ├── store/ (auth.store.ts)
-│   │   │   │   └── components/ (LoginForm.svelte, LogoutButton.svelte)
-│   │   │   │
-│   │   │   ├── files/
-│   │   │   │   ├── ports/ (file-service.port.ts)
-│   │   │   │   ├── adapters/ (cloud-storage.adapter.ts)
-│   │   │   │   ├── use-cases/ (upload, download, list-files)
-│   │   │   │   ├── store/ (files.store.ts)
-│   │   │   │   └── components/
-```
-
-## GUI Package Structure (cont.)
-
-```
-│   │   │   ├── policies/
-│   │   │   │   ├── ports/ (policy-engine.port.ts)
-│   │   │   │   ├── adapters/ (rego-engine.adapter.ts)
-│   │   │   │   └── use-cases/
-│   │   │   │
-│   │   │   └── plugin/               # Plugin management domain
-│   │   │       ├── ports/ (plugin-loader.port.ts)
-│   │   │       ├── adapters/ (module-federation.adapter.ts)
-│   │   │       ├── use-cases/ (load-plugin, unload-plugin)
-│   │   │       └── store/ (plugins.store.ts)
-│   │   │
-│   │   ├── shared/                  # Shared across domains
-│   │   │   ├── components/ (WebAwesome components, reusable UI)
-│   │   │   ├── layouts/
-│   │   │   ├── services/
-│   │   │   └── config/
-│   │   │       ├── env.config.ts    # 12-Factor Principle
-│   │   │       ├── feature-flags.ts
-│   │   │       └── constants.ts
-│   │   │
-│   │   ├── routes/ (+page.svelte, auth/, files/, settings/)
-│   │   ├── lib/ (i18n.ts)
-│   │   └── styles/ (design-tokens.css, themes.css, globals.css)
-│   │
-│   ├── tests/
-│   │   ├── unit/domains/
-│   │   ├── integration/
-│   │   └── e2e/features/ (auth.feature)
-│   │
-│   └── dist/
+├── Application/
+│   ├── gui/   # Workspace: main Svelte app (Host/Shell)
+    │   ├── package.json
+    │   ├── tsconfig.json
+    │   ├── vite.config.ts
+    │   ├── vitest.config.ts
+    │   ├── playwright.config.ts
+    │   ├── .env.example
+    │   │
+    │   ├── public/
+    │   │   ├── manifest.webmanifest     # PWA manifest
+    │   │   ├── service-worker.js        # PWA service worker
+    │   │   ├── icons/ (icon-192x192.png, icon-512x512.png, favicon.ico)
+    │   │   └── locales/ (en.json, de.json)
+    │   │
+    │   ├── src/
+    │   │   ├── main.ts
+    │   │   ├── App.svelte
+    │   │   ├── app.css
+    │   │   │
+    │   │   ├── aspects/
+    |   │   │    └── auth/
+    |   │   │         ├── ports/ (authentication.port.ts, identity-provider.port.ts)
+    |   │   │         ├── adapters/ (oidc-client.adapter.ts, http-auth-controller.adapter.ts)
+    |   │   │         ├── use-cases/ (login, logout, refresh-token)
+    |   │   │         └── store/ (auth.store.ts)
+    │   │   ├── application/                 # Domain-driven (Ports & Adapters)
+    │   │   │   ├── core/
+    │   │   │       ├── ports/ (policy-engine.port.ts)
+    │   │   │       ├── policies
+    │   │   │       └── use-cases/ 
+    │   │   ├── plugin/               # Plugin management domain
+    │   │   │    ├── ports/ (plugin-loader.port.ts)
+    │   │   │    ├── use-cases/ (load-plugin, unload-plugin)
+    │   │   │    └── store/ (plugins.store.ts)
+    │   │   ├── infrastructure/ 
+    |   │   │    └──  files/
+    |   │   │         ├── adapters/ (cloud-storage.adapter.ts)
+    |   │   │         ├── store/ (files.store.ts)
+    |   │   │         └── components/
+    │   │   ├── shared/                  # Shared across domains
+    │   │   │   ├── components/ (WebAwesome components, reusable UI)
+    │   │   │   ├── layouts/
+    │   │   │   ├── services/
+    │   │   │   └── config/
+    │   │   │       ├── env.config.ts    # 12-Factor Principle
+    │   │   │       ├── feature-flags.ts
+    │   │   │       └── constants.ts
+    │   │   ├── pages/                   # Page components
+    │   │   │   ├── Home.svelte
+    │   │   │   ├── About.svelte
+    │   │   │   ├── Settings.svelte
+    │   │   │   └── NotFound.svelte
+    │   │   │
+    │   │   ├── routes/ (+page.svelte, auth/, files/, settings/)
+    │   │   ├── lib/ (i18n.ts)
+    │   │   └── styles/ (design-tokens.css, themes.css, globals.css)
+    │   │
+    │   ├── tests/
+    │   │   ├── unit/domains/
+    │   │   ├── integration/
+    │   │   └── e2e/features/ (auth.feature)
+    │   │
+    │   └── dist/
 ```
 
 ## Plugins & Infrastructure
-
+not necessary for this ticket
 ```
-├── plugins/                         # Workspace: plugin development
+├── Application/plugins                         # Workspace: plugin development
 │   ├── example-plugin/
 │   │   ├── package.json
 │   │   ├── vite.config.ts          # Module Federation for remote
@@ -175,7 +171,7 @@ AIProject/
 - Plugin System (ADR-022): Module Federation via vite.config.ts
 - PWA (ADR-002): Service worker, manifest, icons in gui/public/
 - i18n (ADR-015): en.json and de.json in public/locales/
-- Design System (ADR-011, 012): Tokens in gui/src/styles/ and DesignSystem/
+- Design System (ADR-011, 012): Tokens in gui/src/styles
 - Config (ADR-014): .env.example and env.config.ts (12-Factor)
 - Build (ADR-009): vite.config.ts in gui/ and root
 - Testing: Unit, integration, BDD features in gui/tests/
