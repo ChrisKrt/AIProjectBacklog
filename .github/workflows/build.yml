@@ -38,9 +38,11 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
+        working-directory: Application
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        working-directory: Application
         run: pnpm build
 
       - name: Upload build artifacts

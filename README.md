@@ -10,6 +10,9 @@ A Progressive Web Application built with Svelte, Vite, and TypeScript following 
 ## Getting Started
 
 ```bash
+# Navigate to the Application directory
+cd Application
+
 # Install dependencies
 pnpm install
 
@@ -33,10 +36,10 @@ This project follows the Ports & Adapters (Hexagonal) architecture pattern as de
 ## Project Structure
 
 ```
-├── Application/
+├── Application/              # Application source code (pnpm workspace root)
 │   ├── gui/                  # Main Svelte PWA
 │   └── infrastructure/       # Docker, scripts
 ├── decisions/                # Architecture Decision Records
-├── tasks/                    # Project backlog
+├── tasks/                    # Project backlog items
 └── docs/                     # Documentation
 ```
