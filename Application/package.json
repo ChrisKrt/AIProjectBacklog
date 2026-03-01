@@ -1,0 +1,18 @@
+{
+  "name": "ai-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter gui dev",
+    "build": "pnpm --filter gui build",
+    "test": "pnpm --filter gui test",
+    "test:e2e": "pnpm --filter gui test:e2e",
+    "lint": "pnpm --filter gui lint",
+    "format": "pnpm --filter gui format",
+    "preview": "pnpm --filter gui preview"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
