@@ -6,9 +6,9 @@ status: accepted
 ---
 ## Context
 
-OneBookshelf is designed to be a document organization application that transforms unstructured PDF directories into searchable, organized bookshelves. To be accessible to a broader user base, the application needs to support multiple languages.
+To be accessible to a broader user base, the application needs to support multiple languages.
 
-The initial target audience includes both English and German-speaking users. Since OneBookshelf runs entirely on the client side (both CLI and GUI), the internationalization (i18n) solution must work without server-side rendering or backend infrastructure.
+The initial target audience includes both English and German-speaking users. Since the application runs entirely on the client side, the internationalization (i18n) solution must work without server-side rendering or backend infrastructure.
 
 Key considerations:
 - The GUI (PWA) must support both English and German to serve a broader audience

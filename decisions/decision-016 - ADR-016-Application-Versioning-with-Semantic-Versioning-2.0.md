@@ -10,7 +10,7 @@ To ensure clear, predictable, and industry-standard versioning for releases, the
 
 ## Decision
 
-All releases of the OneBookshelf application (including CLI, GUI, and shared business logic) shall be versioned according to the Semantic Versioning 2.0.0 specification (https://semver.org/spec/v2.0.0.html):
+All releases of the application (including CLI, GUI, and shared business logic) shall be versioned according to the Semantic Versioning 2.0.0 specification (https://semver.org/spec/v2.0.0.html):
 
 - Version numbers will be in the format MAJOR.MINOR.PATCH (e.g., 1.2.3)
 - MAJOR version increments for incompatible API changes
