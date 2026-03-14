@@ -3,8 +3,8 @@ version: '3.8'
 services:
   gui:
     build:
-      context: ../../..
-      dockerfile: Application/infrastructure/docker/Dockerfile
+      context: ../..
+      dockerfile: infrastructure/docker/Dockerfile
     ports:
       - "8080:80"
     environment:
