@@ -9,7 +9,7 @@ status: accepted
 Modern users expect applications to support both light and dark color schemes for accessibility, comfort, and personal preference.
 ## Decision
 
-The OneBookshelf application shall support both light and dark mode themes in the GUI.
+The application shall support both light and dark mode themes in the GUI.
 
 ## Consequences
 
