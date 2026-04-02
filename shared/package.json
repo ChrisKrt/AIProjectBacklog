@@ -1,0 +1,16 @@
+{
+  "name": "@aiproject/shared",
+  "version": "0.1.0",
+  "description": "Shared types, ports, adapters, and utilities",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo 'Lint not configured yet'",
+    "test": "echo 'Test not configured yet'"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

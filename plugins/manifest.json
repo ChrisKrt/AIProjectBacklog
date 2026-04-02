@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    {
+      "id": "example-plugin",
+      "name": "Example Plugin",
+      "version": "0.1.0",
+      "remoteEntry": "./plugins/example-plugin/dist/remoteEntry.js",
+      "exposedModule": "./Plugin",
+      "enabled": false
+    }
+  ]
+}

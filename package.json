@@ -1,0 +1,21 @@
+{
+  "name": "ai-project-backlog",
+  "version": "0.1.0",
+  "description": "OneBookshelf - Document organization PWA with plugin system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter gui dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
